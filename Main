@@ -1,0 +1,178 @@
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Scanner;
+import java.awt.Desktop;
+
+
+public class Main {
+    
+    public static void main(String[] args) throws URISyntaxException, IOException {
+
+        double payment1, payment2, points;
+        points = 0;
+        String odp1, odp2, odp3, odp4;
+
+
+        System.out.println("Java Programmer Salary Calculator.");
+        System.out.println("Please enter Your experience in programming:");
+        System.out.println("A - 0-1 year || B - 1-2 years || C - 2-5 years || D - 5+ years || E - 20+ damn years meeen");
+
+        Scanner scanner = new Scanner(System.in);
+        odp1 = scanner.nextLine();
+
+        switch (odp1) {
+            case "A","a" ->
+                points += 1;
+
+            case "B","b" ->
+                points += 2;
+
+            case "C","c" ->
+                points += 5;
+
+            case "D","d" ->
+                points += 7;
+            case "E","e" ->
+                points += 11;
+
+            default -> {
+                System.out.println("Error no letter found , please enter a valid letter ");
+                odp1 = scanner.nextLine();
+
+                switch (odp1) {
+                    case "A","a" ->
+                        points += 1.0;
+
+                    case "B","b" ->
+                        points += 3;
+
+                    case "C","c" ->
+                        points += 4;
+
+                    case "D","d" ->
+                        points += 5;
+
+                    default -> {
+                        System.out.println("Error again.... system shutdown");
+                        System.exit(0);
+                    }
+                }
+            }
+        }
+
+        System.out.println("Are You student??");
+        System.out.println("Yes || No");
+        Scanner scanner2 = new Scanner(System.in);
+        odp3 = scanner2.nextLine();
+        switch (odp3) {
+            case "Yes","yes" ->
+                    points += 0.5;
+
+            case "No","no" ->
+                    points += 0;
+
+            default -> {
+                System.out.println("Error, no option found, please answer Yes or No");
+                odp3 = scanner2.nextLine();
+                switch (odp3) {
+                    case "Tak" ->
+                            points += 0.5;
+
+                    case "Nie" ->
+                            points += 0;
+
+                    default -> {
+                        System.out.println("Error... again, system shutdown");
+                        System.exit(0);
+                    }
+                }
+            }
+        }
+
+            System.out.println("Have you completed any studies or courses??");
+            System.out.println("If so, what kind?");
+            System.out.println("A - Computer sience studies || B - Software course / Bootcamp || C - Computer sience studies and Software course / Bootcamp / Bootcamp || D - Nothing");
+
+            Scanner scanner1 = new Scanner(System.in);
+            odp2 = scanner1.nextLine();
+        switch (odp2) {
+            case "A", "B","a","b" ->
+                points += 0.5;
+
+            case "C","c" ->
+                points += 1;
+
+            case "D","d" ->
+                points += 0;
+
+
+            default -> {
+                System.out.println("Error, no letter found, please enter a valid letter ");
+                odp2 = scanner1.nextLine();
+                switch (odp2) {
+                    case "A","a", "B","b" ->
+                        points += 0.5;
+
+                    case "C","c" ->
+                        points += 1;
+
+                    case "D","d" ->
+                        points += 0;
+
+                    default -> {
+                        System.out.println("Error again.... system shutdown");
+                        System.exit(0);
+                    }
+                }
+            }
+        }
+        System.out.println("You want to choose full time or part time work?");
+        System.out.println("A - full time || B - part time");
+
+                payment1 = points * 1000 + 2000;
+                payment2 = points * 1500 + 4000;
+
+        Scanner scanner3 = new Scanner(System.in);
+        odp4 = scanner3.nextLine();
+        switch (odp4) {
+            case "A", "a" -> {
+                payment1 += 0;
+                payment2 += 0;
+            }
+            case "B", "b" -> {
+                payment1 /= 2;
+                payment2 /= 2;
+            }
+            default -> {
+                System.out.println("Error, no letter found, please enter a valid letter");
+                odp4 = scanner3.nextLine();
+                switch (odp4) {
+                    case "A", "a" -> {
+                        payment1 += 0;
+                        payment2 += 0;
+                    }
+                    case "B", "b" -> {
+                        payment1 /= 2;
+                        payment2 /= 2;
+                    }
+                    default -> {
+                        System.out.println("Error again... system shutdown");
+                        System.exit(0);
+                    }
+                }
+            }
+        }
+
+                System.out.println("Allright, our calculator said that You SHOULD earn " + payment1 + " minimum, and " + payment2 + " maximum net per month ");
+                Desktop money = Desktop.getDesktop();
+                if(payment1 >= 10000){
+                    money.browse(new URI("https://www.youtube.com/watch?v=GrsZmqoG0l0&ab_channel=RAPISLAND"));
+                } else if(payment1 < 4000){
+                    money.browse(new URI("https://www.youtube.com/watch?v=L3HQMbQAWRc&ab_channel=sk8r123sk8rsk8r123sk8r"));
+                }
+
+
+        }
+
+            }
